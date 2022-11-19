@@ -36,7 +36,7 @@ $ npm run test:cov
 
 # REST API
 The REST API for the example app is described below.
-## Get all active event list
+## Get All Active Event List
 ### Request
 `GET /event/list?page=1`
 ### Response
@@ -71,7 +71,7 @@ The REST API for the example app is described below.
       }
    }
 
-
+## Single Event Details Information
 ### Request
 `GET /event/:eventId`
 
@@ -92,6 +92,7 @@ The REST API for the example app is described below.
       "total_workshops": 3
     }
 
+## Single Active Workshops in an Event
 ### Request
 `GET /event?eventId=1`
 
@@ -120,6 +121,8 @@ The REST API for the example app is described below.
       ]
     }
 
+
+## Single Workshop Details Information
 ### Request
 `GET /workshop/:workshopId`
 
@@ -141,6 +144,7 @@ The REST API for the example app is described below.
       "total_reservations": 1
     }
 
+## Create a Workshop Reservation for a User
 ### Request
 `POST /reservation/:workshopId`
 
@@ -172,6 +176,30 @@ The REST API for the example app is described below.
           "start_at": "2022-11-25T06:59:01.000Z",
           "end_at": "2022-11-28T06:59:01.000Z"
       }
+    }
+
+## Create A Event
+### Request
+`POST /event`
+
+### Response
+    {
+      "title": "Yorokobi Utshab",
+      "start_at": "2022-11-23T06:59:01.107Z",
+      "end_at": "2022-11-24T06:59:01.107Z",
+      "id": 10
+    }
+
+## Create A Workshop
+### Request
+`POST /workshop/:eventId`
+
+### Response
+    {
+      "title": "Test Workshop for event 2",
+      "description": "Test Workshop description for event 2",
+      "start_at": "2022-11-25T06:59:01.107Z",
+      "end_at": "2022-11-28T06:59:01.107Z"
     }
 
 
